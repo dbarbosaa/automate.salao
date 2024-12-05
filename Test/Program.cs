@@ -4,6 +4,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Test.Agendamento;
 using Test.Cadastro;
 using Test.Login;
 namespace Test
@@ -70,11 +71,15 @@ namespace Test
 
             LoginAplicacao.Logar(Selenium);
 
-            //Profissional.Profissionais(Selenium);
+            Profissional.Profissionais(Selenium);
 
             Cliente.Clientes(Selenium);
 
-            Selenium.Dispose();
+            Servico.servicos(Selenium);
+
+            ServicoRealizado.ServicosRealizados(Selenium);
+
+            //Selenium.Dispose();
 
             // Voltar pag anterio
             //Selenium.BackNavigation(2);
